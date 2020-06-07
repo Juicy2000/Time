@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Time</string>
+    <string name="btn_label">Button</string>
+    <string name="btn_ameri_label">America</string>
+    <string name="btn_jap_label">Japan</string>
+    <string name="btn_eur_label">Europe</string>
+    <string name="china_hint_label">Input ChinaTime</string>
 </resources>
