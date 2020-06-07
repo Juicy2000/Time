@@ -53,13 +53,30 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "请输入内容", Toast.LENGTH_SHORT).show();
             return;
         }
-        Log.i(TAG, "onClick: r=" + t);
+        Log.i(TAG, "onClick: t=" + t);
+        long time = System.currentTimeMillis();
+
         if(v.getId()==R.id.ameri){
-            show.setText(String.valueOf(t-13));
-        }else if(v.getId()==R.id.eur){
-            show.setText(String.valueOf(t-8));
+            Date date = new Date(time);
+            TimeZone tz = TimeZone.getTimeZone("America/New_York");
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            df.setTimeZone(tz);
+            String nowAsIOS = df.format(date);
+            show.setText(String.valueOf(nowAsIOS));
+        }else if(v.getId()==R.id.jap){
+            Date date = new Date(time);
+            TimeZone tz = TimeZone.getTimeZone("Asia/Tokyo");
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            df.setTimeZone(tz);
+            String nowAsIOS = df.format(date);
+            show.setText(String.valueOf(nowAsIOS));
         }else{
-            show.setText(String.valueOf(t+1));
+            Date date = new Date(time);
+            TimeZone tz = TimeZone.getTimeZone("Europe/London");
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            df.setTimeZone(tz);
+            String nowAsIOS = df.format(date);
+            show.setText(String.valueOf(nowAsIOS));
         }
         }}
 
